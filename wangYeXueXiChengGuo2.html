@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>简历档案中心</title>
+<style >
+	
+	/* 表单部分.class*/
+	.pos_time{
+		position:fixed;
+		right:130px;
+		top:40px;
+		}
+	.table{
+		border:1px blue solid; 
+		border-collapse:collapse;
+		
+		}	
+	.th{
+		border:1px blue solid;
+		border-collapse:collapse;
+		text-align:right;
+		background-color:blue;
+		color:white;
+		}
+	.td{
+		border:1px blue solid ;
+		border-style:dotted;
+		border-collapse:collapse;
+		
+		
+	}
+	.ts{
+		border:1px blue solid ;
+		border-collapse:collapse;
+		text-align:center;
+	}
+	 .right {
+		position:absolute;
+		right:300px;
+		
+		}
+	.padding{
+		padding:5px;
+		
+		}
+	.color{
+		background-color:lightgrey;
+	}
+	.background{
+		background-color:green;
+	}
+	
+</style>
+</head>
+<body>
+
+<center>
+<caption><b style="font-family:arial;font-size:30px;background-color:green;">个人简历填报表</b></caption>
+</center>
+<p class="pos_time">时间:11月1日</p>
+<br />
+<br />
+<table>
+<tr>
+  <td>
+  <table class="table">
+		<form id="inform">
+	
+	<tr>
+		<th class="th">姓名</td>
+		<td class="td">
+			
+			
+				<input   type="text"   name="fname" class="padding" id="id1"    ><br>
+				
+			
+		</td>
+	</tr>
+	<tr>
+		<th class="th">性别</td>
+		<td class="td">
+			
+				<input  type="radio" name="sex" value="男" class="padding" >男<br>
+				<input  type="radio" name="sex" value="女" class="padding" >女
+			
+		</td>
+	</tr>
+	<tr>
+		<th class="th">年龄</td>
+		<td class="td">
+			<select  id="aa" name="aa">
+				<option value=""></option>
+			    <option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th class="th">身高</td>
+		<td class="td">
+			
+				<input name="id4" type="number"  class="pandding" >
+			 
+		</td>
+	</tr>
+	<tr>
+		<th class="th">兴趣爱好</td>
+		<td class="td">
+			
+				<input type="checkbox" class="兴趣爱好" name="兴趣爱好" id="篮球" value="篮球"class="padding" >篮球<br>
+				<input type="checkbox" class="兴趣爱好" name="兴趣爱好" id="足球" value="足球" class="padding">足球
+			
+		</td>
+	</tr>
+	<tr>
+		<th class="th">自我介绍</td>	
+		<td  >
+		<textarea   name="helloo" class="pandding"></textarea>
+		</td>
+	</tr>
+	</form>
+  </table>
+  </td>
+ <td class="right">
+  <table class="table"  cellspacing="2" cellpadding="12" >
+	<tr class="background" >
+		<th class="ts"> 姓名</td> 
+		<th class="ts">性别</td> 
+		<th class="ts">年龄</td> 
+		<th class="ts">身高</td> 
+		<th class="ts">兴趣爱好</td> 
+		<th class="ts">自我介绍</td> 
+	</tr>
+	<tr  class="color">
+		<td class="ts" id="xingming"></td> 
+		<td class="ts" id="xingbie"></td>
+		<td class="ts" id="nianling"> </td> 
+		<td class="ts" id="shengao"></td>
+		<td class="ts" id="xingquaihao"></td> 
+		<td class="ts" id="zhiwojieshao"></td>
+	</tr>
+	<tr>
+		<td class="ts" ></td> 
+		<td class="ts" ></td>
+		<td class="ts" ></td> 
+		<td class="ts" ></td>
+		<td class="ts" ></td> 
+		<td class="ts" ></td>
+	</tr>
+	<tr  class="color">
+		<td class="ts"></td> 
+		<td class="ts"></td>
+		<td class="ts"></td> 
+		<td class="ts"></td>
+		<td class="ts"></td> 
+		<td class="ts"></td>
+	</tr>
+	<tr>
+		<td class="ts"></td> 
+		<td class="ts"></td>
+		<td class="ts"></td> 
+		<td class="ts"></td>
+		<td class="ts"></td> 
+		<td class="ts"></td>
+	</tr>
+	<tr  class="color">
+		<td class="ts"></td> 
+		<td class="ts"></td>
+		<td class="ts"></td> 
+		<td class="ts"></td>
+		<td class="ts"></td> 
+		<td class="ts"></td>
+	</tr>
+  </table>
+ </td>
+ </tr>
+ </table>
+ <br /> <br />
+<button type='button' value="保存" onclick="myFunction()">保存</button> 
+<script>
+function myFunction() {
+   var w, n;
+	w =document.forms["inform"]["fname"].value;
+
+	
+	if (w == null || w== "") {
+        alert("需要输入名字。");
+        return false;
+    }
+	
+	var obj = document.getElementsByName("sex");
+            	var flags = false;  
+            	for(var i=0; i<obj.length; i ++){
+                    if(obj[i].checked==true){
+                    	flags = true;
+                    }
+                }
+            	if (flags == false)  
+            	{  
+            	    alert("请选着性别！")  
+            	    return false;
+            	}     
+	
+	
+	var v =document.getElementById("aa");
+			if(v.value==""){
+				alert("请选择年龄！");
+			return false;
+			}
+	
+	
+	
+	
+    var x, text;
+    x = document.forms["inform"]["id4"].value;
+    if (isNaN(x) || x < 300 && x > 50) {
+        // text = document.write(x);
+    } else {
+         alert("请输入正确身高");
+		 return false;
+		 
+    }
+  
+
+	
+	var count=0;
+	var checkArry = document.getElementsByName("兴趣爱好");
+            for (var i = 0; i < checkArry.length; i++) { 
+                if(checkArry[i].checked == true){
+                    //选中的操作
+                    count++; 
+                }
+            }
+    if( count == 0 ){
+        alert("请选择你的兴趣爱好！")
+		return false;
+    }
+	
+	
+
+	var x = document.forms["inform"]["helloo"].value;
+	 if (x.length > 10)
+	{
+        alert("输入的内容过长");
+        return false;
+    }
+    
+	if (x == null || x == "")
+	{
+        alert("请输入自我介绍");
+        return false;
+    }
+   
+	help()
+	
+	
+}
+/**
+function submitTable(){
+var account = document.getElementById("account").value;
+var name=document.getElementById("name").value;
+var password=document.getElementById("password").value;
+row = document.getElementById("table").insertRow();
+if(row!=null){
+cell=row.insertCell();
+cell.innerHTML=account;
+cell = row.insertCell();
+cell.innerHTML=name;
+cell = row.insertCell();
+cell.innerHTML=password;
+}
+return false;
+} 
+*/
+/**
+function help()
+{
+
+
+
+
+    
+	var w = document.forms["inform"]["fname"].value
+	document.getElementById("xingming").innerHTML=w
+
+	var obj = document.forms["inform"]["sex"].value
+	document.getElementById("xingbie").innerHTML=obj;
+
+	var e = document.getElementById("aa");
+	var value = e.options[e.selectedIndex].value;
+	document.getElementById("nianling").innerHTML=value;
+
+	var x = document.forms["inform"]["id4"].value
+	document.getElementById("shengao").innerHTML=x
+	
+	var nm=document.forms["inform"]["helloo"].value
+	
+	document.getElementById("zhiwojieshao").innerHTML=nm;
+
+	var x = document.querySelectorAll('.兴趣爱好:checked')
+	var output = ""
+		for (var i = x.length - 1; i >= 0; i--)
+		{
+            if (i == (x.length - 1))
+            {
+                output += x[i].value
+            }
+            else
+                output += ", "  + x[i].value
+
+		}
+	document.getElementById("xingquaihao").innerHTML=output
+
+
+}	
+*/	
+</script>  
+
+
+
+
+</body>
+</html>
